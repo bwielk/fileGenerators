@@ -17,7 +17,6 @@ class XML_generator:
         return child
 
     def create_file(self, root):
-        data_as_string = et.tostring(root)
-        file = open('output.xml', "w")
-        file.write(data_as_string)
-        return data_as_string
+        content = et.ElementTree(root)
+        content.write('output.xml', pretty_print=True)
+        return
